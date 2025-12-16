@@ -1,0 +1,55 @@
+﻿@model IEnumerable<SecondProj.Models.student>
+
+@{
+    ViewData["Title"] = "ListView";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>ListView</h1>
+
+@if (TempData["success"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["success"]
+    </div>
+}
+
+<p>
+    <a asp-action="CreateStud">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.studId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.studName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.studId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.studName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

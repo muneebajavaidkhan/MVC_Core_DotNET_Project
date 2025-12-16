@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewData["Title"] = "StudentDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>StudentDetail</h1>
+@{
+    var studData = ViewData["Stud"] as List<string>;
+
+}
+<h2>@("Print Student Data".ToUpper()) </h2>
+
+@foreach(var s in studData)
+{
+    <p>Name: @s</p>
+}
