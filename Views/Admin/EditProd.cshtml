@@ -1,0 +1,93 @@
+﻿@model SecondProj.Models.Product
+@{
+    ViewData["Title"] = "EditProd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>EditProd</h1>
+
+
+<!-- Content wrapper -->
+<div class="content-wrapper">
+    <!-- Content -->
+
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Forms/</span> Horizontal Layouts</h4>
+
+        <!-- Basic Layout & Basic with Icons -->
+        <div class="row">
+            <!-- Basic Layout -->
+            <div class="col-lg">
+                <div class="card mb-4">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                        <h5 class="mb-0">Basic Layout</h5>
+                        <small class="text-muted float-end">Default label</small>
+                    </div>
+                    <div class="card-body">
+                        <form asp-action="EditProd" method="post" enctype="multipart/form-data">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" asp-for="Id"   />
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" asp-for="ProductName">Product Name</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" asp-for="ProductName" placeholder="Almond" />
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" asp-for="Price">Price</label>
+                                <div class="col-sm-10">
+                                    <input type="text"
+                                           class="form-control"
+                                           asp-for="Price"
+                                           placeholder="PKR 250" />
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" asp-for="Description">description</label>
+                                <div class="col-sm-10">
+                                    <input type="text"
+                                           class="form-control"
+                                           placeholder="Almond desc"
+                                           asp-for="Description" />
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" asp-for="Quantity">Quantity</label>
+                                <div class="col-sm-10">
+                                    <input type="text"
+                                           class="form-control"
+                                           placeholder="3"
+                                           asp-for="Quantity" />
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" asp-for="CategoryId">Category Id</label>
+                                <div class="col-sm-10">
+                                    <select class="form-select" asp-for="CategoryId" asp-items="ViewBag.Categorylist">
+                                        <option selected>Select Category</option>
+
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" asp-for="Image">Product Image</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" asp-for="Image" type="file" id="formFile" name="ImgFile">
+
+                                </div>
+                            </div>
+
+                            <div class="row justify-content-end">
+                                <div class="col-sm-10">
+                                    <button type="submit" class="btn btn-primary">Send</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- / Content -->

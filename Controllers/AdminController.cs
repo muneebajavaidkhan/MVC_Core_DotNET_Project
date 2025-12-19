@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor;
 using SecondProj.Data;
 using SecondProj.Models;
+using System.Collections.Immutable;
 using System.Diagnostics;
 using System.IO;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
@@ -135,6 +136,71 @@ namespace SecondProj.Controllers
 
             return View();
         }
+        public IActionResult ProdList()     
+        {
+            var datashow = db.Products.Include(x=>x.Category).ToList();
+            return View(datashow);
+        }
+        public IActionResult ProdDelete(int id)
+        {
+            var ProdDel = db.Products.FirstOrDefault(x => x.Id == id);
+            if (ProdDel != null)
+            {
+                db.Products.Remove(ProdDel);
+                db.SaveChanges();
+            }
+            TempData["Deleted"] = "Product Deleted Successfully";
+            return RedirectToAction("ProdList");
+        }
+        [HttpGet]
+        public IActionResult EditProd(int id)
+        {
+            var prod = db.Products.FirstOrDefault(x => x.Id == id);
+            ViewBag.Categorylist = new SelectList(db.Categories, "Id", "CateName");
 
+            if (prod == null)
+            {
+                return NotFound();
+            }
+            return View(prod);
+        }
+        [HttpPost]
+        public IActionResult EditProd(Product p, IFormFile ImgFile)
+        {
+            var existProd = db.Products.Find(p.Id);
+            if (existProd == null) {
+                NotFound();
+            }
+            else
+            {
+                if(ImgFile != null)
+                {
+                    //step1 ***Get the image name product8.jpg
+                    var imageName = Path.GetFileName(ImgFile.FileName);
+                    //step 2 Creates the folder path where the image will be stored e.g wwwroot/Image/
+                    string imagePath = Path.Combine(HttpContext.Request.PathBase.Value, "wwwroot/Image/");
+                    //step 3 Combines folder path + image name e.g //wwwroot/Image/Product-8.jpg
+                    string imagevalue = Path.Combine(imagePath, imageName);
+                    // step 4 Save the image into the folder
+                    // Copies the uploaded image into that file
+                    // Move the image from the form into the folder e.g /Image/product8.jpg
+                    using (var stream = new FileStream(imagevalue, FileMode.Create))
+                    {
+                        ImgFile.CopyTo(stream);
+                    }
+
+                    var dbimage = Path.Combine("/Image/", imageName);
+                    existProd.Image = dbimage;
+                }
+                existProd.ProductName = p.ProductName;
+                existProd.Description = p.Description;
+                existProd.Price = p.Price;
+                existProd.Quantity = p.Quantity;
+                db.Products.Update(existProd);
+                db.SaveChanges();
+            }
+            TempData["Updated"] = "Product Updated Successfully";
+            return RedirectToAction("ProdList");
+        }
     }
 }

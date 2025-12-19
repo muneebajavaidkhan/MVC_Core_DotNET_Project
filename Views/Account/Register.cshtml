@@ -1,0 +1,144 @@
+﻿@model SecondProj.Models.Register;
+@{
+    ViewData["Title"] = "Register";
+    Layout = null;
+}
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto', sans-serif;
+        background-color: #f0f4f8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .register-container {
+        background-color: white;
+        padding: 40px 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 360px;
+        text-align: center;
+    }
+
+    .register-title {
+        color: #7fad39;
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+        .register-title::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background-color: #7fad39;
+            margin: 8px auto 0;
+        }
+
+    .input-group {
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+        .input-group i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #757575;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 12px 12px 40px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+            .input-group input::placeholder {
+                color: #757575;
+            }
+
+            .input-group input:focus {
+                border-color: #7fad39;
+                outline: none;
+            }
+
+    .register-btn {
+        width: 100%;
+        padding: 12px;
+        background-color: #7fad39;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .register-btn:hover {
+            background-color: #45a049;
+        }
+
+    .login-link {
+        margin-top: 15px;
+        font-size: 14px;
+        color: #757575;
+    }
+
+        .login-link a {
+            color: #7fad39;
+            text-decoration: none;
+        }
+
+            .login-link a:hover {
+                text-decoration: underline;
+            }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<div class="register-container">
+    <h2 class="register-title">Create an Account</h2>
+    <form asp-action = "Register" method="post">
+        <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" asp-for = "Name" placeholder="Full Name" required>
+            <span asp-validation-for="Name" class="text-danger"></span>
+
+        </div>
+        <div class="input-group">
+            <i class="fas fa-envelope"></i>
+            <input type="email" asp-for = "Email" placeholder="Email" required>
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input type="password" asp-for = "Password" placeholder="Password" required>
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input type="password" asp-for = "ConfirmPassword" placeholder="Confirm Password" required>
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+        </div>
+        <button type="submit" class="register-btn">REGISTER</button>
+    </form>
+    <p class="login-link">Already have an account? <a asp-controller="Account" asp-action="Login">Login here</a></p>
+</div>
+
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
