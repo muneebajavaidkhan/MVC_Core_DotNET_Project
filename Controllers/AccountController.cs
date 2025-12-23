@@ -83,47 +83,38 @@ namespace SecondProj.Controllers
         // Login (POST)
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Login(Register model)
+   
+
+        public IActionResult Login(string email, string password)
         {
-            ModelState.Remove("Name");
-            ModelState.Remove("ConfirmPassword");
-            ModelState.Remove("Role");
-            if (ModelState.IsValid)
+            var user = db.Registers.FirstOrDefault(u => u.Email == email);
+            if (user != null && BCrypt.Net.BCrypt.Verify(password, user.Password))
             {
-                var user = db.Registers.FirstOrDefault(u => u.Email == model.Email);
-                if (user != null && BCrypt.Net.BCrypt.Verify(model.Password, user.Password))
-                {
-                    // Create claims
-                    var claims = new List<Claim>
-                    {
-                        new Claim(ClaimTypes.Name, user.Email),
+                var claims = new List<Claim> {
+                        new Claim(ClaimTypes.Name, user.Name),
                         new Claim(ClaimTypes.Role, user.Role),
                         new Claim("UserId", user.UserId.ToString())
-                    };
+                  };
+                var identity = new ClaimsIdentity(claims, "CookieAuth");
+                HttpContext.SignInAsync("CookieAuth", new ClaimsPrincipal(identity));
 
-                    var identity = new ClaimsIdentity(claims, "CookieAuth");
-                    var principal = new ClaimsPrincipal(identity);
-
-                    // Sign in
-                    HttpContext.SignInAsync("CookieAuth", principal);
-
-                    // Session for quick access
-                    HttpContext.Session.SetInt32("UserId", user.UserId);
-                    HttpContext.Session.SetString("Role", user.Role);
-                    HttpContext.Session.SetString("Name", user.Name);
-
-                    TempData["Success"] = "Logged in successfully";
-
-                    // Redirect based on role
-                    if (user.Role == "Admin")
-                        return RedirectToAction("Index", "Admin");
-                    else
-                        return RedirectToAction("Index", "User");
-                }
-                ModelState.AddModelError("", "Invalid email or password");
+                // Session backup for Cart functions (optional, since claims are available)
+                HttpContext.Session.SetInt32("UserId", user.UserId);
+                return (user.Role == "Admin") ? RedirectToAction("Index", "Admin") : RedirectToAction("Index", "User");
             }
-            return View(model);
+            ViewBag.Error = "Invalid credentials";
+            return View();
         }
+        public IActionResult Logout()
+        {
+            HttpContext.SignOutAsync("CookieAuth");
+            HttpContext.Session.Clear();
+            return RedirectToAction("Login");
+        }
+        public IActionResult AccessDenied()
+        {
+            return RedirectToAction("Login");
 
+        }
+        }
     }
-}
