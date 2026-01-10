@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewData["Title"] = "Checkout";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+@model IEnumerable<Cart>
+
+
+@{
+    decimal subtotal = Model.Sum(c => c.Tprice); // Total price calculate
+}
+
+<section class="checkout spad">
+    <div class="container">
+        <div class="checkout__form">
+            <h4>Billing Details</h4>
+            <form asp-action="PlaceOrder" method="post">
+                <div class="row">
+                    <div class="col-lg-8 col-md-6">
+                        <div class="checkout__input">
+                            <p>Full Name <span>*</span></p>
+                            <input type="text" name="fullName" required>
+                        </div>
+                        <div class="checkout__input">
+                            <p>Shipping Address <span>*</span></p>
+                            <input type="text" name="shippingAddress" placeholder="Street Address" required>
+                        </div>
+                        <div class="checkout__input">
+                            <p>City <span>*</span></p>
+                            <input type="text" name="city" required>
+                        </div>
+                        <div class="checkout__input">
+                            <p>State / Country <span>*</span></p>
+                            <input type="text" name="state" required>
+                        </div>
+                        <div class="checkout__input">
+                            <p>Postcode / ZIP <span>*</span></p>
+                            <input type="text" name="zip" required>
+                        </div>
+                        <div class="checkout__input">
+                            <p>Phone <span>*</span></p>
+                            <input type="text" name="phone" required>
+                        </div>
+                        <div class="checkout__input">
+                            <p>Email <span>*</span></p>
+                            <input type="email" name="email" required>
+                        </div>
+                        <div class="checkout__input">
+                            <p>Order Notes</p>
+                            <input type="text" name="orderNotes" placeholder="Notes about your order">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="checkout__order">
+                            <h4>Your Order</h4>
+                            <div class="checkout__order__products">Products <span>Total</span></div>
+                            <ul>
+                                @foreach (var item in Model)
+                                {
+                                    <li>@item.Product.ProductName <span>$@item.Tprice</span></li>
+                                }
+                            </ul>
+                            <div class="checkout__order__subtotal">Subtotal <span>$@subtotal</span></div>
+                            <div class="checkout__order__total">Total <span>$@subtotal</span></div>
+
+                            <div class="checkout__input__checkbox">
+                                <label for="payment">
+                                    Cash On Delivery
+                                    <input type="radio" name="paymentMethod" value="COD" id="payment" checked>
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="checkout__input__checkbox">
+                                <label for="paypal">
+                                    Paypal
+                                    <input type="radio" name="paymentMethod" value="Paypal" id="paypal">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="site-btn">PLACE ORDER</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

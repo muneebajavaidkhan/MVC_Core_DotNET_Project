@@ -45,7 +45,7 @@ namespace SecondProj.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Category(Category c)
+        public IActionResult Category(CategoryViewModel c)
         {
             if (!ModelState.IsValid)
             {
@@ -57,8 +57,9 @@ namespace SecondProj.Controllers
             {
                 ModelState.AddModelError(nameof(c.CateName), "Category already exist");
             }
-           
-            db.Categories.Add(c);
+            var dc = new Category();
+            dc.CateName = c.CateName;
+            db.Categories.Add(dc);
             db.SaveChanges();
             TempData["Success"] = "Category Added Successfully";
             return Redirect("CatList");
@@ -188,7 +189,7 @@ namespace SecondProj.Controllers
                     // Move the image from the form into the folder e.g /Image/product8.jpg
                     using (var stream = new FileStream(imagevalue, FileMode.Create))
                     {
-                        ImgFile.CopyTo(stream);
+                        ImgFile.CopyTo(stream); 
                     }
 
                     var dbimage = Path.Combine("/Image/", imageName);

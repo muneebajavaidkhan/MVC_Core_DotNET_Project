@@ -1,4 +1,38 @@
-﻿<!DOCTYPE html>
+﻿@using SecondProj.Data
+@using System.Security.Claims
+@inject EcommerceDbContext db
+@{
+    int cartCount = 0;
+
+    if (User.Identity.IsAuthenticated)
+    {
+        int userId = int.Parse(
+            User.FindFirst("UserId")?.Value ?? "0"
+        );
+
+        if (userId > 0)
+        {
+            // SIMPLE & CORRECT
+            cartCount = db.Carts
+                          .Where(c => c.UserId == userId)
+                          .Count();
+        }
+       
+    }
+    /* ---------- LOGIN / USER INFO ---------- */
+    bool isLoggedIn = User.Identity.IsAuthenticated;
+    string userName = "";
+
+    if (isLoggedIn)
+    {
+        userName = User.FindFirst("UserName")?.Value
+                   ?? User.Identity.Name
+                   ?? "User";
+    }
+}
+
+
+<!DOCTYPE html>
 <html lang="zxx">
 
 <head>
@@ -53,8 +87,28 @@
                 </ul>
             </div>
             <div class="header__top__right__auth">
-                <a href="login.html"><i class="fa fa-user"></i> Login</a>
+
+                @if (!isLoggedIn)
+                {
+                    <a asp-controller="Account" asp-action="Login">
+                        <i class="fa fa-user"></i> Login
+                    </a>
+                }
+                else
+                {
+                    <span style="display:block; margin-bottom:5px;">
+                        <i class="fa fa-user"></i> @userName
+                    </span>
+
+                    <a asp-controller="Account"
+                       asp-action="Logout"
+                       style="color:#d33;">
+                        Logout
+                    </a>
+                }
+
             </div>
+
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
@@ -119,7 +173,25 @@
                                 </ul>
                             </div>
                             <div class="header__top__right__auth">
-                                <a asp-controller="Account" asp-action="Login"><i class="fa fa-user"></i> Login</a>
+
+                                @if (!isLoggedIn)
+                                {
+                                    <a asp-controller="Account" asp-action="Login">
+                                        <i class="fa fa-user"></i> Login
+                                    </a>
+                                }
+                                else
+                                {
+                                    <span style="margin-right:10px;">
+                                        <i class="fa fa-user"></i> @userName
+                                    </span>
+
+                                    <a asp-controller="Account" asp-action="Logout"
+                                       style="color:#d33;">
+                                        Logout
+                                    </a>
+                                }
+
                             </div>
                         </div>
                     </div>
@@ -155,7 +227,13 @@
                     <div class="header__cart">
                         <ul>
                             <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                            <li>
+                                <a asp-controller="Cart" asp-action="CartList">
+                                    <i class="fa fa-shopping-bag"></i>
+                                    <span>@cartCount</span>
+                                </a>
+                            </li>
+
                         </ul>
                         <div class="header__cart__price">item: <span>$150.00</span></div>
                     </div>

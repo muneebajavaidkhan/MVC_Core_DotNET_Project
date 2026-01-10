@@ -79,6 +79,12 @@ wwwroot\Admin\assets\vendor\libs\perfect-scrollbar\perfect-scrollbar.js
 wwwroot\Admin\assets\vendor\libs\popper\popper.js
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\Image\Almond.jpg
+wwwroot\Image\cat-1.jpg
+wwwroot\Image\feature-1.jpg
+wwwroot\Image\feature-8.jpg
+wwwroot\Image\Onion.jpg
+wwwroot\Image\product-8.jpg
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
@@ -137,7 +143,6 @@ wwwroot\lib\jquery\dist\jquery.js
 wwwroot\lib\jquery\dist\jquery.min.js
 wwwroot\lib\jquery\dist\jquery.min.map
 wwwroot\lib\jquery\LICENSE.txt
-wwwroot\Image\product-8.jpg
 wwwroot\User\assets\css\bootstrap.min.css
 wwwroot\User\assets\css\elegant-icons.css
 wwwroot\User\assets\css\font-awesome.min.css

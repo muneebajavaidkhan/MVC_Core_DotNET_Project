@@ -115,6 +115,8 @@ public partial class EcommerceDbContext : DbContext
                 .HasColumnName("productName");
             entity.Property(e => e.Quantity).HasColumnName("quantity");
 
+
+
             entity.HasOne(d => d.Category).WithMany(p => p.Products)
                 .HasForeignKey(d => d.CategoryId)
                 .HasConstraintName("FK__Product__categor__286302EC");

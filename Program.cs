@@ -22,6 +22,7 @@ builder.Services.AddAuthentication("CookieAuth")
 // Authorization Roles Ke Sath Add Karo
 builder.Services.AddAuthorization(options => {
     options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
+    options.AddPolicy("RequireAuthenticatedUser", policy => policy.RequireAuthenticatedUser());
 });
 // Add services to the container.
 builder.Services.AddControllersWithViews();
