@@ -1,0 +1,1 @@
+web: export NUGET_PACKAGES=/tmp/.nuget/packages && dotnet restore SecondProj.sln && dotnet publish SecondProj.sln -c Release -o out && dotnet out/SecondProj.dll
