@@ -1,9 +1,0 @@
-# Use Windows container with .NET 8 runtime
-FROM mcr.microsoft.com/dotnet/aspnet:8.0-windowsservercore-ltsc2022
-WORKDIR /app
-
-# Copy published build
-COPY out/ ./
-
-# Start the app
-ENTRYPOINT ["dotnet", "SecondProj.dll"]
