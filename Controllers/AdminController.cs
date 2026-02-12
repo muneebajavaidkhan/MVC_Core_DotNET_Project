@@ -18,7 +18,13 @@ namespace SecondProj.Controllers
     [Authorize(Policy = "AdminOnly")]
     public class AdminController : Controller
     {
-        EcommerceDbContext db = new EcommerceDbContext();
+        private readonly EcommerceDbContext db;
+
+        public AdminController(EcommerceDbContext context)
+        {
+            db = context;
+        }
+        //EcommerceDbContext db = new EcommerceDbContext();
         public IActionResult Index()
         {
             return View();
