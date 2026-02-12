@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "C:\\Users\\muniba\\Desktop\\DotNET(2408B3)\\SecondProj\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{EB73707C-A847-461C-B994-B82D82F487CC}|SecondProj.csproj|c:\\users\\muniba\\desktop\\dotnet(2408b3)\\secondproj\\data\\ecommercedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB73707C-A847-461C-B994-B82D82F487CC}|SecondProj.csproj|solutionrelative:data\\ecommercedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB73707C-A847-461C-B994-B82D82F487CC}|SecondProj.csproj|c:\\users\\muniba\\desktop\\dotnet(2408b3)\\secondproj\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB73707C-A847-461C-B994-B82D82F487CC}|SecondProj.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB73707C-A847-461C-B994-B82D82F487CC}|SecondProj.csproj|c:\\users\\muniba\\desktop\\dotnet(2408b3)\\secondproj\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EB73707C-A847-461C-B994-B82D82F487CC}|SecondProj.csproj|solutionrelative:views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB73707C-A847-461C-B994-B82D82F487CC}|SecondProj.csproj|c:\\users\\muniba\\desktop\\dotnet(2408b3)\\secondproj\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EB73707C-A847-461C-B994-B82D82F487CC}|SecondProj.csproj|solutionrelative:views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB73707C-A847-461C-B994-B82D82F487CC}|SecondProj.csproj|c:\\users\\muniba\\desktop\\dotnet(2408b3)\\secondproj\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EB73707C-A847-461C-B994-B82D82F487CC}|SecondProj.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EB73707C-A847-461C-B994-B82D82F487CC}|SecondProj.csproj|c:\\users\\muniba\\desktop\\dotnet(2408b3)\\secondproj\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB73707C-A847-461C-B994-B82D82F487CC}|SecondProj.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -23,19 +43,84 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "EcommerceDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\muniba\\Desktop\\DotNET(2408B3)\\SecondProj\\Data\\EcommerceDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\EcommerceDbContext.cs",
+              "ToolTip": "C:\\Users\\muniba\\Desktop\\DotNET(2408B3)\\SecondProj\\Data\\EcommerceDbContext.cs*",
+              "RelativeToolTip": "Data\\EcommerceDbContext.cs*",
+              "ViewState": "AgIAABYAAAAAAAAAAAA0wBwAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T07:21:15.737Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\muniba\\Desktop\\DotNET(2408B3)\\SecondProj\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\muniba\\Desktop\\DotNET(2408B3)\\SecondProj\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T07:12:06.233Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "C:\\Users\\muniba\\Desktop\\DotNET(2408B3)\\SecondProj\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\Users\\muniba\\Desktop\\DotNET(2408B3)\\SecondProj\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "Views\\Home\\Privacy.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-17T07:46:53.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\muniba\\Desktop\\DotNET(2408B3)\\SecondProj\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\muniba\\Desktop\\DotNET(2408B3)\\SecondProj\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-17T07:46:48.436Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "About.cshtml",
+              "DocumentMoniker": "C:\\Users\\muniba\\Desktop\\DotNET(2408B3)\\SecondProj\\Views\\Home\\About.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\About.cshtml",
+              "ToolTip": "C:\\Users\\muniba\\Desktop\\DotNET(2408B3)\\SecondProj\\Views\\Home\\About.cshtml",
+              "RelativeToolTip": "Views\\Home\\About.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-17T07:46:41.63Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\muniba\\Desktop\\DotNET(2408B3)\\SecondProj\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\muniba\\Desktop\\DotNET(2408B3)\\SecondProj\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAuwDQAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAAuwDQAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-17T07:44:30.63Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\muniba\\Desktop\\DotNET(2408B3)\\SecondProj\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",

@@ -261,3 +261,11 @@ C:\Users\muniba\Desktop\DotNET(2408B3)\SecondProj\obj\Debug\net8.0\refint\Second
 C:\Users\muniba\Desktop\DotNET(2408B3)\SecondProj\obj\Debug\net8.0\SecondProj.pdb
 C:\Users\muniba\Desktop\DotNET(2408B3)\SecondProj\obj\Debug\net8.0\SecondProj.genruntimeconfig.cache
 C:\Users\muniba\Desktop\DotNET(2408B3)\SecondProj\obj\Debug\net8.0\ref\SecondProj.dll
+C:\Users\muniba\Desktop\DotNET(2408B3)\SecondProj\bin\Debug\net8.0\out\web.config
+C:\Users\muniba\Desktop\DotNET(2408B3)\SecondProj\bin\Debug\net8.0\out\appsettings.Development.json
+C:\Users\muniba\Desktop\DotNET(2408B3)\SecondProj\bin\Debug\net8.0\out\appsettings.json
+C:\Users\muniba\Desktop\DotNET(2408B3)\SecondProj\bin\Debug\net8.0\out\SecondProj.deps.json
+C:\Users\muniba\Desktop\DotNET(2408B3)\SecondProj\bin\Debug\net8.0\out\SecondProj.runtimeconfig.json
+C:\Users\muniba\Desktop\DotNET(2408B3)\SecondProj\bin\Debug\net8.0\out\SecondProj.staticwebassets.endpoints.json
+C:\Users\muniba\Desktop\DotNET(2408B3)\SecondProj\bin\Debug\net8.0\Npgsql.dll
+C:\Users\muniba\Desktop\DotNET(2408B3)\SecondProj\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll

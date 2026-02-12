@@ -4,8 +4,10 @@ using SecondProj.Data;
 var builder = WebApplication.CreateBuilder(args);
 // 1. Add DbContext
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+//builder.Services.AddDbContext<EcommerceDbContext>(options =>
+//    options.UseSqlServer(connectionString));
 builder.Services.AddDbContext<EcommerceDbContext>(options =>
-    options.UseSqlServer(connectionString));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 //2. // Session Add Karo for Authentication purpose
 builder.Services.AddSession(options => {
     options.IdleTimeout = TimeSpan.FromMinutes(30);
@@ -48,5 +50,21 @@ app.UseSession();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=User}/{action=Index}/{id?}");
+
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        var context = services.GetRequiredService<EcommerceDbContext>();
+        context.Database.Migrate();
+        Console.WriteLine("Database Migration Successful!");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("Migration Error: " + ex.Message);
+    }
+}
 
 app.Run();

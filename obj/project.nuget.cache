@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "CAW5790RrAE=",
+  "dgSpecHash": "1J9xFbggijM=",
   "success": true,
   "projectFilePath": "C:\\Users\\muniba\\Desktop\\DotNET(2408B3)\\SecondProj\\SecondProj.csproj",
   "expectedPackageFiles": [
@@ -140,6 +140,8 @@
     "C:\\Users\\muniba\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\muniba\\.nuget\\packages\\mono.texttemplating\\2.3.1\\mono.texttemplating.2.3.1.nupkg.sha512",
     "C:\\Users\\muniba\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\muniba\\.nuget\\packages\\npgsql\\8.0.6\\npgsql.8.0.6.nupkg.sha512",
+    "C:\\Users\\muniba\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\8.0.11\\npgsql.entityframeworkcore.postgresql.8.0.11.nupkg.sha512",
     "C:\\Users\\muniba\\.nuget\\packages\\nuget.common\\6.11.0\\nuget.common.6.11.0.nupkg.sha512",
     "C:\\Users\\muniba\\.nuget\\packages\\nuget.configuration\\6.11.0\\nuget.configuration.6.11.0.nupkg.sha512",
     "C:\\Users\\muniba\\.nuget\\packages\\nuget.dependencyresolver.core\\6.11.0\\nuget.dependencyresolver.core.6.11.0.nupkg.sha512",
